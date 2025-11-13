@@ -19,3 +19,13 @@ const writerPosts = {
   rajat_gupta: ['8094892859165856464', '3215585198392231583']
   // Add more mappings here
 };
+
+function getWriterIdByPostId(postId) {
+  for (const writerId in writerPosts) {
+    if (writerPosts[writerId].includes(postId)) {
+      return writerId;
+    }
+  }
+  return 'admin';
+}
+
