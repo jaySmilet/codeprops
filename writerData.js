@@ -1,6 +1,6 @@
 const writers = {
   admin: {
-    name: 'Jayganesh Gupta',
+    name: 'Jayganesh',
     role: 'Admin',
     photo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig1NzTuAl0v4I9oOLJ9zizxOFjD1U812KuYlq_1y3r9R-r51CQBYNpkTiVYqZj6TomAMcbh7nqeTewzWFWpFuGTRLH-VnBXjslcxaiIPtB0x3PRqHb7VuiMETfX59WgsSG2RjaKblnShCE-4f3OxV0a0K5rk1bs7D0u_yYhCHFHXOpuGM/s1600/1000030798.jpg',
     profileUrl: 'https://www.linkedin.com/in/jayganesh-gupta'
