@@ -8,7 +8,7 @@ const writers = {
   rajat_gupta: {
     name: 'Rajat Gupta',
     role: 'Writer',
-    photo: '',
+    photo: 'https://assets.codevichar.com/writers-pic/rajat-gupta.webp',
     profileUrl: 'https://www.linkedin.com/in/rajat-gupta-37a463212'
   }
   // Add more writers here
