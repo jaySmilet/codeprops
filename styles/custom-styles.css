@@ -1,0 +1,45 @@
+/* Table container */
+.cp-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+/* Rows */
+.cp-row {
+  display: table-row;
+}
+
+/* Cells */
+.cp-cell {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+/* Header row */
+.cp-head {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+/* Zebra striping */
+.cp-row.cp-alt {
+  background-color: #f9f9f9;
+}
+
+/* Responsive: enable horizontal scroll only on small screens */
+@media (max-width: 768px) {
+  .cp-responsive-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cp-table {
+    min-width: 600px; /* forces scroll when viewport is smaller */
+  }
+}
