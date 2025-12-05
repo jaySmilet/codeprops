@@ -11,6 +11,14 @@ const writers = {
     photo: "https://assets.codevichar.com/writers-pic/rajat-gupta.webp",
     profileUrl: "https://www.linkedin.com/in/rajat-gupta-37a463212",
   },
+  mohammed_farooque_kazi: {
+    name: "Mohammed Farooque Kazi",
+    role: "Writer",
+    photo:
+      "https://assets.codevichar.com/writers-pic/mohammed_farooque_kazi.webp",
+    profileUrl:
+      "https://www.linkedin.com/in/mohammed-farooque-kazi-contentwriter-digitalmarketingspecialist/",
+  },
   // Add more writers here
 };
 
@@ -24,6 +32,7 @@ const writerPosts = {
     "1862014061274520134",
   ],
   rajat_gupta: ["7761740006827282118"],
+  mohammed_farooque_kazi: ["7426921082384135961"],
   // Add more mappings here
 };
 
