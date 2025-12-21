@@ -1,92 +1,122 @@
-import { FAQ_DATA_BY_POST_ID } from "./faqData.js";
+// cache for loaded JSON
+let FAQ_DATA_BY_POST_ID = null;
+let FAQ_LOADING_PROMISE = null;
 
-//Function called directly from template
-export function getFAQHTML(postId) {
-  const faqs = FAQ_DATA_BY_POST_ID[postId];
-  if (!faqs || !faqs.length) return; // no FAQ for this post
+function loadFaqJson() {
+  if (FAQ_DATA_BY_POST_ID) return Promise.resolve(FAQ_DATA_BY_POST_ID);
+  if (FAQ_LOADING_PROMISE) return FAQ_LOADING_PROMISE;
 
-  // The script tag that called us
-  const scriptEl = document.currentScript; // works in all modern browsers [web:71]
-  if (!scriptEl) return;
-
-  // Parent is the div[itemprop="description"]
-  const parent = scriptEl.parentElement;
-  if (!parent) return;
-
-  const wrapper = document.createElement("section");
-  wrapper.className = "faq-wrapper";
-
-  const heading = document.createElement("h2");
-  heading.className = "faq-title";
-  heading.textContent = "Frequently Asked Questions";
-  wrapper.appendChild(heading);
-
-  const accordion = document.createElement("div");
-  accordion.className = "faq-accordion";
-
-  faqs.forEach((item, index) => {
-    const faqItem = document.createElement("div");
-    faqItem.className = "faq-item";
-
-    const header = document.createElement("button");
-    header.type = "button";
-    header.className = "faq-header";
-    header.setAttribute("aria-expanded", index === 0 ? "true" : "false");
-
-    const qSpan = document.createElement("span");
-    qSpan.className = "faq-question";
-    qSpan.textContent = item.question;
-
-    const icon = document.createElement("span");
-    icon.className = "faq-icon";
-    icon.textContent = index === 0 ? "−" : "+";
-
-    header.appendChild(qSpan);
-    header.appendChild(icon);
-
-    const body = document.createElement("div");
-    body.className = "faq-body";
-
-    const p = document.createElement("p");
-    p.textContent = item.answer;
-    body.appendChild(p);
-
-    if (index === 0) {
-      faqItem.classList.add("is-open");
-      body.style.maxHeight = "1000px";
-    }
-
-    header.addEventListener("click", () => {
-      const isOpen = faqItem.classList.contains("is-open");
-
-      accordion.querySelectorAll(".faq-item").forEach((it) => {
-        it.classList.remove("is-open");
-        const b = it.querySelector(".faq-body");
-        const h = it.querySelector(".faq-header");
-        const ic = it.querySelector(".faq-icon");
-        if (b) b.style.maxHeight = null;
-        if (h) h.setAttribute("aria-expanded", "false");
-        if (ic) ic.textContent = "+";
-      });
-
-      if (!isOpen) {
-        faqItem.classList.add("is-open");
-        body.style.maxHeight = body.scrollHeight + "px";
-        header.setAttribute("aria-expanded", "true");
-        icon.textContent = "−";
-      }
+  // faqs.json is next to faq-config.js
+  FAQ_LOADING_PROMISE = fetch("./faqs.json") // <-- relative path
+    .then((res) => {
+      if (!res.ok) throw new Error("FAQ JSON load failed");
+      return res.json();
+    })
+    .then((data) => {
+      FAQ_DATA_BY_POST_ID = data || {};
+      return FAQ_DATA_BY_POST_ID;
+    })
+    .catch((err) => {
+      console.error("[FAQ] JSON load error:", err);
+      FAQ_DATA_BY_POST_ID = {};
+      return FAQ_DATA_BY_POST_ID;
     });
 
-    faqItem.appendChild(header);
-    faqItem.appendChild(body);
-    accordion.appendChild(faqItem);
-  });
-
-  wrapper.appendChild(accordion);
-
-  // insert FAQ just before the script tag (i.e., at end of description)
-  parent.insertBefore(wrapper, scriptEl);
-
-  // optional: remove the script node itself from DOM
-  scriptEl.remove();
+  return FAQ_LOADING_PROMISE;
 }
+
+// main function called from Blogger template
+function getFAQHTML(postId) {
+  loadFaqJson().then((map) => {
+    const faqs = map[postId];
+    if (!faqs || !faqs.length) return;
+
+    const scriptEl =
+      document.currentScript ||
+      (function () {
+        const scripts = document.getElementsByTagName("script");
+        return scripts[scripts.length - 1];
+      })();
+    if (!scriptEl) return;
+
+    const parent = scriptEl.parentElement;
+    if (!parent) return;
+
+    const wrapper = document.createElement("section");
+    wrapper.className = "faq-wrapper";
+
+    const heading = document.createElement("h2");
+    heading.className = "faq-title";
+    heading.textContent = "Frequently Asked Questions";
+    wrapper.appendChild(heading);
+
+    const accordion = document.createElement("div");
+    accordion.className = "faq-accordion";
+
+    faqs.forEach((item, index) => {
+      const faqItem = document.createElement("div");
+      faqItem.className = "faq-item";
+
+      const header = document.createElement("button");
+      header.type = "button";
+      header.className = "faq-header";
+      header.setAttribute("aria-expanded", index === 0 ? "true" : "false");
+
+      const qSpan = document.createElement("span");
+      qSpan.className = "faq-question";
+      qSpan.textContent = item.question;
+
+      const icon = document.createElement("span");
+      icon.className = "faq-icon";
+      icon.textContent = index === 0 ? "−" : "+";
+
+      header.appendChild(qSpan);
+      header.appendChild(icon);
+
+      const body = document.createElement("div");
+      body.className = "faq-body";
+
+      const p = document.createElement("p");
+      p.textContent = item.answer;
+      body.appendChild(p);
+
+      if (index === 0) {
+        faqItem.classList.add("is-open");
+        body.style.maxHeight = "1000px";
+      }
+
+      header.addEventListener("click", () => {
+        const isOpen = faqItem.classList.contains("is-open");
+
+        accordion.querySelectorAll(".faq-item").forEach((it) => {
+          it.classList.remove("is-open");
+          const b = it.querySelector(".faq-body");
+          const h = it.querySelector(".faq-header");
+          const ic = it.querySelector(".faq-icon");
+          if (b) b.style.maxHeight = null;
+          if (h) h.setAttribute("aria-expanded", "false");
+          if (ic) ic.textContent = "+";
+        });
+
+        if (!isOpen) {
+          faqItem.classList.add("is-open");
+          body.style.maxHeight = body.scrollHeight + "px";
+          header.setAttribute("aria-expanded", "true");
+          icon.textContent = "−";
+        }
+      });
+
+      faqItem.appendChild(header);
+      faqItem.appendChild(body);
+      accordion.appendChild(faqItem);
+    });
+
+    wrapper.appendChild(accordion);
+
+    parent.insertBefore(wrapper, scriptEl);
+    scriptEl.remove();
+  });
+}
+
+// expose globally for inline <script> call
+window.getFAQHTML = getFAQHTML;
