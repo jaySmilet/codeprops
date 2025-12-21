@@ -7,7 +7,7 @@ function loadFaqJson() {
   if (FAQ_LOADING_PROMISE) return FAQ_LOADING_PROMISE;
 
   // faqs.json is next to faq-config.js
-  FAQ_LOADING_PROMISE = fetch("./faqs.json") // <-- relative path
+  FAQ_LOADING_PROMISE = fetch("https://assets.codevichar.com/faq/faqData.json")
     .then((res) => {
       if (!res.ok) throw new Error("FAQ JSON load failed");
       return res.json();
