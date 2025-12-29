@@ -1,44 +1,24 @@
 {
-  "6507059429009069673": [
+  "3032318097410509007": [
     {
-      "question": "What is destructuring?",
-      "answer": "Destructuring lets you unpack values from arrays and objects into variables."
+      "question": "Do I need to learn all design patterns before building real apps?",
+      "answer": "No. It is usually more effective to build things first and then learn the patterns that match the problems you actually hit, like “too many if statements” or “hard‑to‑test global code”."
     },
     {
-      "question": "What is Redux?",
-      "answer": "Redux is a predictable state container often used with React."
+      "question": "When is a Singleton a bad idea in JavaScript?",
+      "answer": "A Singleton becomes a problem when it silently turns into a global dumping ground: many unrelated things stored on one object, hidden dependencies, and tests that are hard to isolate because everything shares the same state."
     },
     {
-      "question": "What is a closure?",
-      "answer": "A closure is a function that retains access to its lexical scope even when the function is executed outside that scope."
-    }
-  ],
-  "6727401471234107213": [
-    {
-      "question": "What is destructuring?",
-      "answer": "Destructuring lets you unpack values from arrays and objects into variables."
+      "question": "How can I practice these patterns without a big project?",
+      "answer": "Take a small feature—like a notification system, a theme switcher, or a simple API client—and intentionally refactor it twice: once using a Module, once using Observer or Factory. This “double build” makes trade‑offs easier to see in a safe environment."
     },
     {
-      "question": "What is Redux?",
-      "answer": "Redux is a predictable state container often used with React."
+      "question": "Are design patterns different in React or Node.js?",
+      "answer": "The names and ideas are the same, but the way they show up is slightly different. In React, components often act like observers of state changes, while in Node.js, modules and event emitters are typical places where Module and Observer patterns appear."
     },
     {
-      "question": "What is a closure?",
-      "answer": "A closure is a function that retains access to its lexical scope even when the function is executed outside that scope."
-    }
-  ],
-  "7105969084901479386": [
-    {
-      "question": "What is destructuring?",
-      "answer": "Destructuring lets you unpack values from arrays and objects into variables."
-    },
-    {
-      "question": "What is Redux?",
-      "answer": "Redux is a predictable state container often used with React."
-    },
-    {
-      "question": "What is a closure?",
-      "answer": "A closure is a function that retains access to its lexical scope even when the function is executed outside that scope."
+      "question": "How do design patterns help with interviews?",
+      "answer": "Many JavaScript interview questions hide a pattern in plain sight: “swap algorithms at runtime” points to Strategy, “notify multiple listeners” to Observer, and “one shared config” to Singleton. Knowing patterns lets you explain your solution more clearly and confidently."
     }
   ]
 }
