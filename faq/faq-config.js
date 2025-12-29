@@ -35,18 +35,18 @@ function getFAQHTML(postId) {
     console.log("[FAQ] matched faqs:", faqs);
     if (!faqs || !faqs.length) return;
 
-    const scriptEl =
-      document.currentScript ||
-      (function () {
-        const scripts = document.getElementsByTagName("script");
-        return scripts[scripts.length - 1];
-      })();
+    // Use explicit ID (REQUIRED)
+    const scriptEl = document.getElementById("faq-inline-script");
+    console.log("[FAQ] scriptEl:", scriptEl);
     if (!scriptEl) {
-      console.warn("[FAQ] inline script element not found");
+      console.warn(
+        "[FAQ] inline script element not found (needs id='faq-inline-script')"
+      );
       return;
     }
 
     const parent = scriptEl.parentElement;
+    console.log("[FAQ] parent:", parent);
     if (!parent) {
       console.warn("[FAQ] parent element missing");
       return;
