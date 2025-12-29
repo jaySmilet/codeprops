@@ -105,13 +105,14 @@
 .faq-item.is-open .faq-header {
   background: #f8fafc;
   color: #1e40af;
+  border-bottom: 1px solid;
 }
 
 .faq-item.is-open .faq-icon {
   background: #3b82f6;
   border-color: #3b82f6;
   color: white;
-  transform: rotate(45deg);
+  transform: rotate(0deg);
 }
 
 .faq-item.is-open .faq-body {
