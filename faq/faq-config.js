@@ -55,7 +55,7 @@ function getFAQHTML(postId) {
     const wrapper = document.createElement("section");
     wrapper.className = "faq-wrapper";
 
-    const heading = document.createElement("h2");
+    const heading = document.createElement("h3");
     heading.className = "faq-title";
     heading.textContent = "Frequently Asked Questions";
     wrapper.appendChild(heading);
