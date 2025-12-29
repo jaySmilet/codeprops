@@ -13,6 +13,7 @@ function loadFaqJson() {
       return res.json();
     })
     .then((data) => {
+      console.log("[FAQ] JSON loaded:", data);
       FAQ_DATA_BY_POST_ID = data || {};
       return FAQ_DATA_BY_POST_ID;
     })
@@ -27,8 +28,11 @@ function loadFaqJson() {
 
 // main function called from Blogger template
 function getFAQHTML(postId) {
+  console.log("[FAQ] called with postId:", postId);
   loadFaqJson().then((map) => {
+    console.log("[FAQ] available keys:", Object.keys(map));
     const faqs = map[postId];
+    console.log("[FAQ] matched faqs:", faqs);
     if (!faqs || !faqs.length) return;
 
     const scriptEl =
@@ -37,10 +41,16 @@ function getFAQHTML(postId) {
         const scripts = document.getElementsByTagName("script");
         return scripts[scripts.length - 1];
       })();
-    if (!scriptEl) return;
+    if (!scriptEl) {
+      console.warn("[FAQ] inline script element not found");
+      return;
+    }
 
     const parent = scriptEl.parentElement;
-    if (!parent) return;
+    if (!parent) {
+      console.warn("[FAQ] parent element missing");
+      return;
+    }
 
     const wrapper = document.createElement("section");
     wrapper.className = "faq-wrapper";
