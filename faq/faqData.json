@@ -3,18 +3,42 @@
     {
       "question": "What is destructuring?",
       "answer": "Destructuring lets you unpack values from arrays and objects into variables."
+    },
+    {
+      "question": "What is Redux?",
+      "answer": "Redux is a predictable state container often used with React."
+    },
+    {
+      "question": "What is a closure?",
+      "answer": "A closure is a function that retains access to its lexical scope even when the function is executed outside that scope."
     }
   ],
   "6727401471234107213": [
     {
+      "question": "What is destructuring?",
+      "answer": "Destructuring lets you unpack values from arrays and objects into variables."
+    },
+    {
       "question": "What is Redux?",
       "answer": "Redux is a predictable state container often used with React."
+    },
+    {
+      "question": "What is a closure?",
+      "answer": "A closure is a function that retains access to its lexical scope even when the function is executed outside that scope."
     }
   ],
   "7105969084901479386": [
     {
+      "question": "What is destructuring?",
+      "answer": "Destructuring lets you unpack values from arrays and objects into variables."
+    },
+    {
       "question": "What is Redux?",
       "answer": "Redux is a predictable state container often used with React."
+    },
+    {
+      "question": "What is a closure?",
+      "answer": "A closure is a function that retains access to its lexical scope even when the function is executed outside that scope."
     }
   ]
 }
