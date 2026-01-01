@@ -71,11 +71,11 @@
       "answer": "Closures themselves do not automatically cause memory leaks. Problems appear if you keep long‑lived references (like event listeners on \"\"window\"\" or DOM nodes) that close over large objects you no longer need. Removing listeners or nulling out unused references lets the engine reclaim memory normally."
     },
     {
-      "question": "How are closures used in React hooks?",
+      "question": "How are closures used in React hooks ?",
       "answer": "Hooks like 'useState' and 'useEffect' rely heavily on closures. For example, the updater function from 'useState' closes over the component’s internal state slot. When you call it later, React uses that closure to know which state to update, even though the original render is long gone."
     },
     {
-      "question": "Why does my closure sometimes show 'stale' state?",
+      "question": "Why does my closure sometimes show 'stale' state ?",
       "answer": "If you create a closure and then state changes elsewhere, the closure will still see whatever variables it actually closed over. In React, for example, creating a function outside of 'useEffect' or not including variables in the dependency array can cause the function to close over older values. The fix is usually to move where the function is defined or include the right dependencies so the closure is refreshed when needed."
     }
   ]
