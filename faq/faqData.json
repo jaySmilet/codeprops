@@ -20,5 +20,27 @@
       "question": "How do design patterns help with interviews?",
       "answer": "Many JavaScript interview questions hide a pattern in plain sight: “swap algorithms at runtime” points to Strategy, “notify multiple listeners” to Observer, and “one shared config” to Singleton. Knowing patterns lets you explain your solution more clearly and confidently."
     }
+  ],
+  "3197912432376675878": [
+    {
+      "question": "Is destructuring just syntactic sugar, or does it change how my code runs?",
+      "answer": "It is mostly syntactic sugar: under the hood, JavaScript is still accessing properties and array elements. The big benefit is readability and fewer chances for copy‑paste mistakes, not a radically different runtime behavior."
+    },
+    {
+      "question": "Should I always destructure function parameters?",
+      "answer": "Not always. Destructuring is great when the function uses several properties and you want the signature to show them clearly. If a function only touches one property, passing that property directly might be more readable."
+    },
+    {
+      "question": "Is destructuring safe to use in older browsers?",
+      "answer": "Destructuring is an ES6 feature. For modern frontend workflows (React, Angular, bundlers like Webpack/Vite), it is usually transpiled automatically for older browsers. If you are writing raw JS for very old environments, make sure your build setup or target browsers actually support it."
+    },
+    {
+      "question": "How can I practice destructuring without breaking existing code?",
+      "answer": "Pick a small, non‑critical file and refactor only local variables first. Replace repeated property access with a single destructuring statement, run your tests or refresh the page, and confirm everything still works. That gradual approach builds confidence quickly."
+    },
+    {
+      "question": "Does destructuring have performance implications?",
+      "answer": "In most cases, the performance difference is negligible. Destructuring may introduce a tiny overhead due to creating new bindings, but in real‑world applications, this is rarely a bottleneck. Focus on code clarity first; optimize only if you identify a real performance issue."
+    }
   ]
 }
