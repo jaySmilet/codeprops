@@ -63,7 +63,7 @@
   ],
   "5355063644606321456": [
     {
-      "question": "Are closures the same as \"\"keeping variables on the heap\"\" ?",
+      "question": "Are closures the same as 'keeping variables on the heap' ?",
       "answer": "Closures are a language‑level concept: the engine keeps variables alive as long as any inner function can still access them. How the engine stores them internally (stack, heap, environment records) is an implementation detail, but you can think of it as “the function carries its environment along."
     },
     {
@@ -72,11 +72,11 @@
     },
     {
       "question": "How are closures used in React hooks?",
-      "answer": "Hooks like \"\"useState\"\" and \"\"useEffect\"\" rely heavily on closures. For example, the updater function from \"\"useState\"\" closes over the component’s internal state slot. When you call it later, React uses that closure to know which state to update, even though the original render is long gone."
+      "answer": "Hooks like 'useState' and 'useEffect' rely heavily on closures. For example, the updater function from 'useState' closes over the component’s internal state slot. When you call it later, React uses that closure to know which state to update, even though the original render is long gone."
     },
     {
-      "question": "Why does my closure sometimes show \"\"stale\"\" state?",
-      "answer": "If you create a closure and then state changes elsewhere, the closure will still see whatever variables it actually closed over. In React, for example, creating a function outside of \"\"useEffect\"\" or not including variables in the dependency array can cause the function to close over older values. The fix is usually to move where the function is defined or include the right dependencies so the closure is refreshed when needed."
+      "question": "Why does my closure sometimes show 'stale' state?",
+      "answer": "If you create a closure and then state changes elsewhere, the closure will still see whatever variables it actually closed over. In React, for example, creating a function outside of 'useEffect' or not including variables in the dependency array can cause the function to close over older values. The fix is usually to move where the function is defined or include the right dependencies so the closure is refreshed when needed."
     }
   ]
 }
