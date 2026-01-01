@@ -42,5 +42,23 @@
       "question": "Does destructuring have performance implications?",
       "answer": "In most cases, the performance difference is negligible. Destructuring may introduce a tiny overhead due to creating new bindings, but in real‑world applications, this is rarely a bottleneck. Focus on code clarity first; optimize only if you identify a real performance issue."
     }
+  ],
+  "3321904781342482745": [
+    {
+      "question": "Can I mix ?? and || in the same expression?",
+      "answer": "You can, but JavaScript has rules about operator precedence and you cannot directly combine them without parentheses. If you must mix them, always add parentheses to make the order explicit, for example: (value ?? defaultA) || fallbackB."
+    },
+    {
+      "question": "What is the exact difference between value ?? fallback and value || fallback?",
+      "answer": "value || fallback returns fallback for any falsy value (0, \"\", false, NaN, null, undefined). value ?? fallback only returns fallback when value is null or undefined, preserving all other falsy values."
+    },
+    {
+      "question": "Does ?? work in all browsers and Node versions?",
+      "answer": "?? is part of modern JavaScript (ES2020). It is supported in current versions of major browsers and Node. For older environments, bundlers and transpilers (like Babel) can convert it to equivalent code, so check your build setup if you target legacy platforms."
+    },
+    {
+      "question": "Is there any performance concern with using ?? often?",
+      "answer": "For typical frontend and backend JavaScript workloads, the performance difference compared with manual checks or || is negligible. Modern engines optimize these operators well; code clarity and correctness around 0, false, and \"\" are far more important in real projects."
+    }
   ]
 }
