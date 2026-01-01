@@ -45,20 +45,38 @@
   ],
   "3321904781342482745": [
     {
-      "question": "Can I mix '??' and '||' in the same expression?",
+      "question": "Can I mix '??' and '||' in the same expression ?",
       "answer": "You can, but JavaScript has rules about operator precedence and you cannot directly combine them without parentheses. If you must mix them, always add parentheses to make the order explicit, for example: (value ?? defaultA) || fallbackB."
     },
     {
-      "question": "What is the exact difference between 'value ?? fallback' and 'value || fallback'?",
+      "question": "What is the exact difference between 'value ?? fallback' and 'value || fallback' ?",
       "answer": "'value || fallback' returns 'fallback' for any falsy value (0, \"\", false, NaN, null, undefined). 'value ?? fallback' only returns 'fallback' when value is 'null' or 'undefined', preserving all other falsy values."
     },
     {
-      "question": "Does '??' work in all browsers and Node versions?",
+      "question": "Does '??' work in all browsers and Node versions ?",
       "answer": "'??' is part of modern JavaScript (ES2020). It is supported in current versions of major browsers and Node. For older environments, bundlers and transpilers (like Babel) can convert it to equivalent code, so check your build setup if you target legacy platforms."
     },
     {
-      "question": "Is there any performance concern with using '??' often?",
+      "question": "Is there any performance concern with using '??' often ?",
       "answer": "For typical frontend and backend JavaScript workloads, the performance difference compared with manual checks or '||' is negligible. Modern engines optimize these operators well; code clarity and correctness around 0, false, and \"\" are far more important in real projects."
+    }
+  ],
+  "5355063644606321456": [
+    {
+      "question": "Are closures the same as \"\"keeping variables on the heap\"\" ?",
+      "answer": "Closures are a language‑level concept: the engine keeps variables alive as long as any inner function can still access them. How the engine stores them internally (stack, heap, environment records) is an implementation detail, but you can think of it as “the function carries its environment along."
+    },
+    {
+      "question": "Can closures cause memory leaks ?",
+      "answer": "Closures themselves do not automatically cause memory leaks. Problems appear if you keep long‑lived references (like event listeners on \"\"window\"\" or DOM nodes) that close over large objects you no longer need. Removing listeners or nulling out unused references lets the engine reclaim memory normally."
+    },
+    {
+      "question": "How are closures used in React hooks?",
+      "answer": "Hooks like \"\"useState\"\" and \"\"useEffect\"\" rely heavily on closures. For example, the updater function from \"\"useState\"\" closes over the component’s internal state slot. When you call it later, React uses that closure to know which state to update, even though the original render is long gone."
+    },
+    {
+      "question": "Why does my closure sometimes show \"\"stale\"\" state?",
+      "answer": "If you create a closure and then state changes elsewhere, the closure will still see whatever variables it actually closed over. In React, for example, creating a function outside of \"\"useEffect\"\" or not including variables in the dependency array can cause the function to close over older values. The fix is usually to move where the function is defined or include the right dependencies so the closure is refreshed when needed."
     }
   ]
 }
