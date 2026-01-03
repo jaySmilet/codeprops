@@ -78,5 +78,27 @@
       "question": "Why does my closure sometimes show 'stale' state ?",
       "answer": "If you create a closure and then state changes elsewhere, the closure will still see whatever variables it actually closed over. In React, for example, creating a function outside of 'useEffect' or not including variables in the dependency array can cause the function to close over older values. The fix is usually to move where the function is defined or include the right dependencies so the closure is refreshed when needed."
     }
+  ],
+  "3120525541353958376": [
+    {
+      "question": "What is the default phase when I use 'addEventListener' ?",
+      "answer": "By default, listeners fire in the bubbling phase. The third argument (options) defaults to { capture: false }, so you only see the event as it comes up from the target."
+    },
+    {
+      "question": "Can the same event be handled in both capturing and bubbling phases ?",
+      "answer": "Yes. The event travels through three stages: capturing → target → bubbling. If you attach listeners with capture: true and others with default bubbling, all of them can run (unless one of them stops propagation)."
+    },
+    {
+      "question": "When should I prefer event delegation over individual listeners ?",
+      "answer": "Use delegation when you have many similar child elements (list items, table rows, buttons in a grid) or when elements are added dynamically. Attach one listener to a stable ancestor and use event.target or closest() to figure out which child was interacted with."
+    },
+    {
+      "question": "Does 'stopPropagation()' also prevent default browser behavior like link navigation ?",
+      "answer": "No. 'stopPropagation()' only stops the event from moving to other listeners. To block the browser’s default action (like following a link or submitting a form), you must also call event.preventDefault() or return false in some older patterns."
+    },
+    {
+      "question": "Is event capturing necessary in modern frameworks like React or Angular ?",
+      "answer": "Most of the time, no—bubbling plus framework abstractions are enough. But understanding capturing helps when you work with raw DOM APIs, global listeners, analytics hooks, or when debugging why an outer handler sees an event before an inner one in complex layouts."
+    }
   ]
 }
