@@ -100,5 +100,31 @@
       "question": "Is event capturing necessary in modern frameworks like React or Angular ?",
       "answer": "Most of the time, no—bubbling plus framework abstractions are enough. But understanding capturing helps when you work with raw DOM APIs, global listeners, analytics hooks, or when debugging why an outer handler sees an event before an inner one in complex layouts."
     }
+  ],
+  "5222663548685705143": [
+    {
+      "question": "When would I use both debounce AND throttle on the same event ?",
+      "answer": "Resize is perfect—throttle gives smooth dragging feedback, debounce handles the final recalculation. I use this pattern on every responsive dashboard."
+    },
+    {
+      "question": "Does debouncing hurt SEO or accessibility ?",
+      "answer": "No, because screen readers fire input events normally, and search indexing doesn't care about client-side delays. The performance gains actually help accessibility."
+    },
+    {
+      "question": "How do I debounce React components ?",
+      "answer": "Use 'useCallback + useRef' for the timer, or libraries like 'lodash.debounce'. Cleanup in 'useEffect' return function."
+    },
+    {
+      "question": "What's better for scroll—infinite scroll or 'load on demand' ?",
+      "answer": "Throttled scroll position checking. Infinite scroll loads ahead predictively, 'load on demand' waits for exact bottom detection. Both work great throttled."
+    },
+    {
+      "question": "Can these cause 'jumpy' animations ?",
+      "answer": "Yes if delays are too long. For 60fps visuals, never exceed 16ms throttle. Debouncing is fine for non-visual calculations."
+    },
+    {
+      "question": "Do modern browsers need these anymore ?",
+      "answer": "Absolutely. requestAnimationFrame helps with rendering, but input/scroll events still fire at native rates (100-500/sec). Users on older hardware especially benefit."
+    }
   ]
 }
