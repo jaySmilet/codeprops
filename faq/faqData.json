@@ -126,5 +126,31 @@
       "question": "Do modern browsers need these anymore ?",
       "answer": "Absolutely. requestAnimationFrame helps with rendering, but input/scroll events still fire at native rates (100-500/sec). Users on older hardware especially benefit."
     }
+  ],
+  "2218027210438624569": [
+    {
+      "question": "Is Redux Saga dead in 2026 ?",
+      "answer": "No. RTK Query handles data fetching perfectly, but Saga still shines for orchestration (real-time, complex workflows, cancellation). They're complementary."
+    },
+    {
+      "question": "How do you test Saga vs Thunk ?",
+      "answer": "Thunk: Mock 'fetch' and test the returned promise.\n Saga: Mock effects ('call', 'put') and test the generator steps. Saga tests are more powerful but verbose."
+    },
+    {
+      "question": "Can I use both in the same app ?",
+      "answer": "Yes! Thunk for simple actions, Saga for complex. Redux doesn't care—both are just middleware."
+    },
+    {
+      "question": "What's the RTK Query migration path ?",
+      "answer": "Replace 'fetchOrders' thunks with 'useGetOrdersQuery'. Keep Saga for non‑API coordination (timers, race conditions, real-time)."
+    },
+    {
+      "question": "Team pushback on Saga complexity ?",
+      "answer": "Document your workflows visually first (flowcharts), then show the cancellation/retry features. Once they see 'cancel()' and 'retry()', the complexity justifies itself."
+    },
+    {
+      "question": "Performance difference between Thunk/Saga ?",
+      "answer": "Negligible. Both dispatch actions normally. Saga has slightly more overhead from generators, but it's microseconds. Architecture clarity matters more."
+    }
   ]
 }
