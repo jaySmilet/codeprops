@@ -152,5 +152,27 @@
       "question": "Performance difference between Thunk/Saga ?",
       "answer": "Negligible. Both dispatch actions normally. Saga has slightly more overhead from generators, but it's microseconds. Architecture clarity matters more."
     }
+  ],
+  "738378818817929846": [
+    {
+      "question": "Are Observables only for Angular and RxJS ?",
+      "answer": "No. Angular popularized them with RxJS, but the concept is library‑agnostic. You can build small observable patterns yourself or use them in React, Node, or pure JavaScript whenever streams of data make sense."
+    },
+    {
+      "question": "Do Observables replace Promises completely ?",
+      "answer": "Not really. Promises are still perfect for one‑off operations. Observables complement Promises by covering the “multiple values over time” use case. In many apps, you’ll use both side by side"
+    },
+    {
+      "question": "Are Observables bad for performance ?",
+      "answer": "They’re not inherently heavy. The cost comes from how many subscriptions and operators you create. When used properly (with clean unsubscriptions), they often improve performance by centralizing and controlling async flows instead of scattering event listeners everywhere."
+    },
+    {
+      "question": "How do I avoid memory leaks with Observables ?",
+      "answer": "Always unsubscribe when the consumer goes away. In frameworks: \n Angular: use takeUntil, AsyncPipe, or OnDestroy patterns. \n React: use cleanup functions inside useEffect. And be careful with long‑lived Observables that outlive their components."
+    },
+    {
+      "question": "What’s the biggest mental shift when moving from Promises to Observables ?",
+      "answer": "With Promises, you think “call a function, get a result later.” With Observables, you think “subscribe to a source, react to values over time.” It’s less like a function call and more like listening to a radio station."
+    }
   ]
 }
