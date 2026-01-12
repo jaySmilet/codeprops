@@ -174,5 +174,23 @@
       "question": "What’s the biggest mental shift when moving from Promises to Observables ?",
       "answer": "With Promises, you think “call a function, get a result later.” With Observables, you think “subscribe to a source, react to values over time.” It’s less like a function call and more like listening to a radio station."
     }
+  ],
+  "8734105623954555199": [
+    {
+      "question": "Is 'AsyncPipe' pure or impure ?",
+      "answer": "It's pure magic. Updates automatically when the Observable emits, no manual subscription management. Use it everywhere possible."
+    },
+    {
+      "question": "Can impure pipes crash my app performance ?",
+      "answer": "Yes. One impure pipe with 1000 items = 1000 executions per change detection cycle. At 60fps, that's 60,000 executions/second. Monitor with Angular DevTools Profiler."
+    },
+    {
+      "question": "Should I replace impure pipes with component methods ?",
+      "answer": "Sometimes yes. Component methods run in the component context (easier debugging), but pipes are more declarative. Try both, profile both."
+    },
+    {
+      "question": "OnPush + pure pipes = always fast ?",
+      "answer": "NYes! OnPush only runs change detection when '@Inputs' change. Pure pipes skip 90% of work. This combo powers my largest production dashboards.o"
+    }
   ]
 }
