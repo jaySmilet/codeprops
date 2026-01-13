@@ -32,7 +32,7 @@ const writerPosts = {
     "1862014061274520134",
   ],
   rajat_gupta: ["7761740006827282118"],
-  mohammed_farooque_kazi: ["7426921082384135961"],
+  mohammed_farooque_kazi: ["7426921082384135961", "3698598699600341239"],
   // Add more mappings here
 };
 
