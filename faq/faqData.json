@@ -200,7 +200,7 @@
     },
     {
       "question": "Does useCallback prevent ALL child re-renders ?",
-      "answer": "No. It stabilizes function props. Child still re-renders if object/array props change. Wrap children in <b>React.memo()</b> too."
+      "answer": "No. It stabilizes function props. Child still re-renders if object/array props change. Wrap children in React.memo() too."
     },
     {
       "question": "What's the performance cost of useMemo/useCallback ?",
@@ -208,7 +208,7 @@
     },
     {
       "question": "Can I overuse these hooks ?",
-      "answer": "Yes. Rule: memoize what costs time, not what you think costs time. Profile first. Simple <b>a + b</b> doesn't need <b>useMemo</b>."
+      "answer": "Yes. Rule: memoize what costs time, not what you think costs time. Profile first. Simple 'a + b' doesn't need useMemo."
     },
     {
       "question": "React.memo + useCallback = always optimal ?",
