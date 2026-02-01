@@ -192,5 +192,31 @@
       "question": "OnPush + pure pipes = always fast ?",
       "answer": "NYes! OnPush only runs change detection when '@Inputs' change. Pure pipes skip 90% of work. This combo powers my largest production dashboards.o"
     }
+  ],
+  "6392437914215053950": [
+    {
+      "question": "How do I know if I need useMemo/useCallback ?",
+      "answer": "Profile! Chrome DevTools → Performance → Record typing/scrolling. If you see >1000ms CPU or >500 re-renders per interaction, optimize the top offenders."
+    },
+    {
+      "question": "Does useCallback prevent ALL child re-renders ?",
+      "answer": "No. It stabilizes function props. Child still re-renders if object/array props change. Wrap children in <b>React.memo()</b> too."
+    },
+    {
+      "question": "What's the performance cost of useMemo/useCallback ?",
+      "answer": "~0.1ms overhead per call. Worth it when you save 100ms+ on expensive operations. Net positive 99% of time when used correctly."
+    },
+    {
+      "question": "Can I overuse these hooks ?",
+      "answer": "Yes. Rule: memoize what costs time, not what you think costs time. Profile first. Simple <b>a + b</b> doesn't need <b>useMemo</b>."
+    },
+    {
+      "question": "React.memo + useCallback = always optimal ?",
+      "answer": "Close, but also use immutable updates (useReducer with spread) and useMemo for expensive derivations. Full stack needed for large lists."
+    },
+    {
+      "question": "In Next.js 15+, do I still need these ?",
+      "answer": "Yes for client components. Server Components eliminate client re-renders entirely. Hybrid approach: heavy computation → Server, UI → Client + memo hooks."
+    }
   ]
 }
