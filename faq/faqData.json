@@ -218,5 +218,31 @@
       "question": "In Next.js 15+, do I still need these ?",
       "answer": "Yes for client components. Server Components eliminate client re-renders entirely. Hybrid approach: heavy computation → Server, UI → Client + memo hooks."
     }
-  ]
+  ],
+  "7191656702707752887": [
+    {
+      "question": "Do seal/freeze throw errors when mutated ?",
+      "answer": "No, they silently fail in non-strict mode. Use in 'use strict' or check Object.isSealed(obj) / Object.isFrozen(obj) for debugging."
+    },
+    {
+      "question": "Performance impact on large objects ?",
+      "answer": "Negligible. ~50-100% slower mutations, but mutations shouldn't happen anyway. Cost of debugging >> runtime cost."
+    },
+    {
+      "question": "Do they work with React state ?",
+      "answer": "Yes! Freezing initial state + immutable updates = optimal React.memo performance. Seal Redux initial state."
+    },
+    {
+      "question": "What about nested arrays/objects ?",
+      "answer": "Shallow only. Use deepFreeze/seal (code above) or libraries like 'immer' for complex state trees."
+    },
+    {
+      "question": "Proxy vs seal/freeze—which is better ?",
+      "answer": "seal/freeze for simple protection. Proxy for validation/logging. seal/freeze have zero runtime overhead after setup."
+    },
+    {
+      "question": "ESLint rule for this ?",
+      "answer": "Custom rule scanning for unprotected shared exports. Also use 'eslint-plugin-immutable'."
+    }
+  ] 
 }
