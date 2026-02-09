@@ -244,5 +244,31 @@
       "question": "ESLint rule for this ?",
       "answer": "Custom rule scanning for unprotected shared exports. Also use 'eslint-plugin-immutable'."
     }
-  ] 
+  ],
+  "1024695032327445096": [
+    {
+      "question": "Do I need to change code for Fiber benefits ?",
+      "answer": "No! React 16+ uses Fiber automatically. Write normal components—Fiber handles time slicing behind scenes."
+    },
+    {
+      "question": "How do I see if Fiber is working ?",
+      "answer": "Chrome DevTools → Performance → Record heavy update. Look for thin green React slices (16ms) vs fat blocking chunks."
+    },
+    {
+      "question": "Does Fiber make my app slower ?",
+      "answer": "No—much faster interactivity. Total render time similar, but spread across frames instead of blocking upfront."
+    },
+    {
+      "question": "Concurrent features require Fiber ?",
+      "answer": "Yes. useTransition, Suspense for data, startTransition only work because Fiber can pause/resume work."
+    },
+    {
+      "question": "Can I control Fiber priorities myself ?",
+      "answer": "Indirectly via useTransition() (mark updates low priority) or normal React patterns (heavy work in useEffect)."
+    },
+    {
+      "question": "Fiber vs Solid.js/Svelte signals ?",
+      "answer": "Fiber = better scheduling, not fine-grained reactivity. Solid/Svelte win on raw DOM updates, Fiber wins on complex UIs + animations."
+    }
+  ]
 }
