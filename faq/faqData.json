@@ -296,5 +296,31 @@
       "question": "When migrating teams resist hooks ?",
       "answer": "Show before/after bundle size + stack traces. Demo debugging wrapper hell vs flat hooks. Numbers convince faster than theory."
     }
+  ],
+  "6157677034530237463": [
+    {
+      "question": "GraphQL always faster than REST ?",
+      "answer": "No! GraphQL great for complex joins, terrible for simple lookups + caching. My benchmarks: REST 1ms cached vs GraphQL 120ms cold."
+    },
+    {
+      "question": "Can I mix both in one app ?",
+      "answer": "Yes! 80% of my production apps use hybrid. REST for public/crud, GraphQL for dashboards/mobile."
+    },
+    {
+      "question": "GraphQL caching solutions ?",
+      "answer": "1. Persisted queries + Redis 2. Apollo Server caching 3. DataLoader results 4. CDN for common queries. Still harder than HTTP."
+    },
+    {
+      "question": "Team too small for GraphQL ?",
+      "answer": "Yes. GraphQL schema + resolvers = 3x more code. REST endpoints simpler for <5 devs."
+    },
+    {
+      "question": "tRPC vs GraphQL vs REST ?",
+      "answer": "tRPC = GraphQL simplicity + REST performance. Best for internal APIs (2026 sweet spot)."
+    },
+    {
+      "question": "GraphQL subscriptions production ready ?",
+      "answer": "Yes with Apollo Server + Redis pub/sub. Handles 10k concurrent users fine."
+    }
   ]
 }
