@@ -270,5 +270,31 @@
       "question": "Fiber vs Solid.js/Svelte signals ?",
       "answer": "Fiber = better scheduling, not fine-grained reactivity. Solid/Svelte win on raw DOM updates, Fiber wins on complex UIs + animations."
     }
+  ],
+  "2576528700598927602": [
+    {
+      "question": "Can I still use HOCs with hooks ?",
+      "answer": "Yes! Hooks inside HOCs work perfectly. The problem isn't hooks vs HOCs—it's wrapper hell vs flat structure."
+    },
+    {
+      "question": "How do I migrate existing HOCs ?",
+      "answer": "Extract state/effects to custom hooks → Replace HOC with hook + conditional rendering → Delete HOC."
+    },
+    {
+      "question": "Performance difference hooks vs HOCs ?",
+      "answer": "Hooks win. No wrapper layers = fewer re-renders. React.memo + stable callbacks handle optimization."
+    },
+    {
+      "question": "Feature flag HOC vs useFeatureFlag hook ?",
+      "answer": "HOC cleaner for simple yes/no across entire component trees. Hook better when mixed with other conditional logic."
+    },
+    {
+      "question": "HOCs with TypeScript—prop injection issues ?",
+      "answer": "Painful. Hooks + discriminated unions much cleaner. React.ComponentProps hell avoided."
+    },
+    {
+      "question": "When migrating teams resist hooks ?",
+      "answer": "Show before/after bundle size + stack traces. Demo debugging wrapper hell vs flat hooks. Numbers convince faster than theory."
+    }
   ]
 }
