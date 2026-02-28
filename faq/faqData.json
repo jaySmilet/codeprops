@@ -322,5 +322,27 @@
       "question": "GraphQL subscriptions production ready ?",
       "answer": "Yes with Apollo Server + Redis pub/sub. Handles 10k concurrent users fine."
     }
+  ],
+  "7948873191386544060": [
+    {
+      "question": "Who were the top international delegates ?",
+      "answer": "UAE's Omar Al Olama led a 20-person team; Singapore's Dr. Sia Kin Ning; French Inria experts; US OpenAI folks. They signed 15+ collabs with Indian firms."
+    },
+    {
+      "question": "Any free resources from the event ?",
+      "answer": "Yes—downloadable kits like Google’s bias toolkit and Jio’s API sandbox. I grabbed 'em; links in summit app (still live post-event)."
+    },
+    {
+      "question": "Was it beginner-friendly ?",
+      "answer": "Totally. Tracks from 'AI 101' to quantum ML. I saw freshers from Tier-2 colleges demoing chatbots."
+    },
+    {
+      "question": "Cost and logistics ?",
+      "answer": "Free for devs/students (I paid ₹2,500 early bird). Bharat Mandapam Metro-adjacent; shuttles from airports. Food was subsidized, veg/non-veg galore."
+    },
+    {
+      "question": "Biggest takeaway for developers ?",
+      "answer": "AI augments, doesn't automate jobs. Focus on prompt engineering and ethics—my new mantra for JS/Angular posts."
+    }
   ]
 }
