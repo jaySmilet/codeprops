@@ -344,5 +344,31 @@
       "question": "Biggest takeaway for developers ?",
       "answer": "AI augments, doesn't automate jobs. Focus on prompt engineering and ethics—my new mantra for JS/Angular posts."
     }
+  ],
+  "2280984019739280904": [
+    {
+      "question": "When NOT to lazy load ?",
+      "answer": "Core layout, navigation, auth components (<50KB total). Lazy load routes + heavy features only."
+    },
+    {
+      "question": "Skeleton vs Spinner vs Skeleton animation ?",
+      "answer": "Route-aware skeletons win. Spinners feel broken, shimmer feels premium."
+    },
+    {
+      "question": "Vercel/Netlify automatic splitting enough ?",
+      "answer": "No. They split packages, not your routes. Manual React.lazy() gives surgical control."
+    },
+    {
+      "question": "Lazy loading hurts SEO ?",
+      "answer": "No. <Suspense> hydrates normally. Google crawls all chunks. Lighthouse loves it."
+    },
+    {
+      "question": "How many chunks ideal ?",
+      "answer": "3-7 total. 100 chunks = death by HTTP requests. 1 chunk = back to monolith."
+    },
+    {
+      "question": "Next.js App Router vs manual lazy ?",
+      "answer": "Next.js automates 90%. Manual React.lazy needed for Create React App + complex client routing."
+    }
   ]
 }
