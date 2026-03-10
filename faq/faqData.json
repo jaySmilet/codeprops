@@ -370,5 +370,31 @@
       "question": "Next.js App Router vs manual lazy ?",
       "answer": "Next.js automates 90%. Manual React.lazy needed for Create React App + complex client routing."
     }
+  ],
+  "5149443859261050950": [
+    {
+      "question": "Does this work differently in arrow functions ?",
+      "answer": "Huge difference. Arrow = lexical this (inherits from parent). Regular = dynamic this (who called it)."
+    },
+    {
+      "question": "Why this undefined in React event handlers ?",
+      "answer": "React creates new function context. Fix: Arrow class field (handleClick = () => {}) or .bind(this) in constructor."
+    },
+    {
+      "question": "useCallback vs arrow function for event handlers ?",
+      "answer": "useCallback wins (stable reference). Plain arrow recreates on every render, breaks React.memo."
+    },
+    {
+      "question": "Strict mode changes this behavior ?",
+      "answer": "Yes! Non-arrow functions → this = undefined instead of window. Forces you to write proper arrow functions."
+    },
+    {
+      "question": "How do I debug this quickly ?",
+      "answer": "console.log('this:', this) first line of every broken function. Shows exactly what's wrong in 2 seconds."
+    },
+    {
+      "question": "TypeScript catch this errors ?",
+      "answer": "Partially. no-this-alias + no-invalid-this catch 80%. Runtime this bugs still need runtime checks."
+    }
   ]
 }
