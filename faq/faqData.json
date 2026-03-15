@@ -396,5 +396,31 @@
       "question": "TypeScript catch this errors ?",
       "answer": "Partially. no-this-alias + no-invalid-this catch 80%. Runtime this bugs still need runtime checks."
     }
+  ],
+  "2276458713434413438": [
+    {
+      "question": "Can I convert interface ↔ type later ?",
+      "answer": "Usually yes. interface → type loses merging but gains unions. type → interface needs manual splitting. Plan ahead."
+    },
+    {
+      "question": "Performance difference ?",
+      "answer": "None. Purely compile-time. Declaration merging has ~2% slower IntelliSense in 10k+ file repos (negligible)."
+    },
+    {
+      "question": "React.FC vs custom interfaces ?",
+      "answer": "Custom interface ButtonProps always. React.FC adds unwanted children prop + worse IntelliSense."
+    },
+    {
+      "question": "Third-party library types don't merge ?",
+      "answer": "Use declaration merging (declare module 'lib' { interface X {...} }). Types can't do this."
+    },
+    {
+      "question": "ESLint rule forcing one over other ?",
+      "answer": "@typescript-eslint/consistent-type-definitions: 'interface' for objects. Override case-by-case with comments."
+    },
+    {
+      "question": "Vue/NestJS/Svelte different rules ?",
+      "answer": "Same! Props/composables → interfaces. Complex utils → types. Framework agnostic."
+    }
   ]
 }
