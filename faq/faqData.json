@@ -422,5 +422,31 @@
       "question": "Vue/NestJS/Svelte different rules ?",
       "answer": "Same! Props/composables → interfaces. Complex utils → types. Framework agnostic."
     }
+  ],
+  "1862014061274520134": [
+    {
+      "question": "Performance difference measurable ?",
+      "answer": "Dramatic. 3k listeners → 12. Chrome Memory: 847MB → 192MB. App stays responsive 8+ hours."
+    },
+    {
+      "question": "React event delegation same as vanilla ?",
+      "answer": "Yes + React optimizations. Synthetic events bubble identically. Delegation pattern identical."
+    },
+    {
+      "question": "Delegation with Shadow DOM ?",
+      "answer": "No. Shadow DOM blocks bubbling. Use custom events or direct binding inside shadow roots."
+    },
+    {
+      "question": "matches() vs classList.contains() ?",
+      "answer": "matches() faster + CSS selectors. e.target.matches('.delete') vs e.target.classList.contains('delete')."
+    },
+    {
+      "question": "Delegation for forms/inputs ?",
+      "answer": "Yes but carefully. input, change bubble fine. Use closest('form[data-id]') for form-specific logic."
+    },
+    {
+      "question": "Cleanup needed for delegation ?",
+      "answer": "No! Single container listener. Remove container → listener gone. Direct binding needs manual cleanup hell."
+    }
   ]
 }
