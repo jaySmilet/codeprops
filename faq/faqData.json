@@ -474,5 +474,31 @@
       "question": "Nested/child routes with resolvers ?",
       "answer": "Parent resolvers block children. Use lazy-loaded feature modules with parent resolvers for complex apps."
     }
+  ],
+  "5564764676971843864": [
+    {
+      "question": "Guards run on direct navigation ?",
+      "answer": "YES—every route change/location change triggers guards. Type /admin → blocked instantly."
+    },
+    {
+      "question": "Performance impact ?",
+      "answer": "Negligible. take(1) + cached auth state = <5ms. UX benefit >> cost."
+    },
+    {
+      "question": "Multiple guards order matters ?",
+      "answer": "Execution order = array order. AuthGuard first, then RoleGuard, etc."
+    },
+    {
+      "question": "Guards work with lazy loading ?",
+      "answer": "Perfect. Guards run before module chunk loads. Zero unprotected exposure."
+    },
+    {
+      "question": "Server-side rendering + guards ?",
+      "answer": "Yes with TransferState. Guards run during SSR, state transfers to client."
+    },
+    {
+      "question": "Guard vs auth service in component ?",
+      "answer": "Guards win. Route-level blocking vs component-level after-load checks."
+    }
   ]
 }
