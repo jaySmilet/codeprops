@@ -448,5 +448,31 @@
       "question": "Cleanup needed for delegation ?",
       "answer": "No! Single container listener. Remove container → listener gone. Direct binding needs manual cleanup hell."
     }
+  ],
+  "5181020444725379551": [
+    {
+      "question": "Resolvers block entire navigation ?",
+      "answer": "Yes—that's the point. Component waits for data. UX: spinner → complete page vs component → spinners → flicker."
+    },
+    {
+      "question": "Performance overhead ?",
+      "answer": "Minimal. Parallel forkJoin vs sequential component loading. Lighthouse scores improve 3x typically."
+    },
+    {
+      "question": "Multiple resolvers per route ?",
+      "answer": "Yes. 'resolve: { data1: Resolver1, data2: Resolver2 }'. All run in parallel."
+    },
+    {
+      "question": "Standalone components + resolvers ?",
+      "answer": "Perfect. 'provideRouter(routes)' with resolve works identically."
+    },
+    {
+      "question": "Resolver vs loading service in component ?",
+      "answer": "Resolvers win. Guaranteed data on init, no subscription management, navigation blocking on error."
+    },
+    {
+      "question": "Nested/child routes with resolvers ?",
+      "answer": "Parent resolvers block children. Use lazy-loaded feature modules with parent resolvers for complex apps."
+    }
   ]
 }
