@@ -500,5 +500,31 @@
       "question": "Guard vs auth service in component ?",
       "answer": "Guards win. Route-level blocking vs component-level after-load checks."
     }
+  ],
+  "8197819110520319776": [
+    {
+      "question": "Back button + refresh protected ?",
+      "answer": "YES—CanDeactivate triggers on ALL navigation (router, back, refresh, link clicks)."
+    },
+    {
+      "question": "Performance impact ?",
+      "answer": "Zero—runs only on navigation attempt. <1ms execution time."
+    },
+    {
+      "question": "Works with lazy-loaded modules ?",
+      "answer": "Perfect—guards run before module chunk loads."
+    },
+    {
+      "question": "Multiple guards + CanDeactivate order ?",
+      "answer": "canActivate → canDeactivate (on leave). Deactivate runs LAST."
+    },
+    {
+      "question": "SSR compatibility ?",
+      "answer": "Skip on server (isPlatformBrowser). Client-only navigation protection."
+    },
+    {
+      "question": "Nested routes all protected ?",
+      "answer": "Parent route guard protects entire subtree. Most efficient."
+    }
   ]
 }
