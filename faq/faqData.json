@@ -526,5 +526,31 @@
       "question": "Nested routes all protected ?",
       "answer": "Parent route guard protects entire subtree. Most efficient."
     }
+  ],
+  "3271923344872572970": [
+    {
+      "question": "CanLoad vs CanActivate — when each ?",
+      "answer": "CanLoad = block module download (lazy modules). CanActivate = block route after download (small components)."
+    },
+    {
+      "question": "Network tab proof ?",
+      "answer": "Guest → /admin → 0KB admin chunk. Admin → /admin → 1.8MB instant. Chrome Network tab doesn't lie."
+    },
+    {
+      "question": "Multiple CanLoad guards ?",
+      "answer": "Array order matters. [AuthGuard, RoleGuard, FeatureGuard]—fails fast at first check."
+    },
+    {
+      "question": "SSR + CanLoad compatible ?",
+      "answer": "Skip server-side. Client-only bundle protection. Server renders public shell."
+    },
+    {
+      "question": "Child routes inherit parent CanLoad ?",
+      "answer": "YES—parent blocks entire module tree. Most efficient pattern."
+    },
+    {
+      "question": "Bundle size threshold for CanLoad ?",
+      "answer": ">100KB = CanLoad. <50KB = CanActivate or inline. Measure with webpack-bundle-analyzer."
+    }
   ]
 }
