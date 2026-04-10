@@ -552,5 +552,31 @@
       "question": "Bundle size threshold for CanLoad ?",
       "answer": ">100KB = CanLoad. <50KB = CanActivate or inline. Measure with webpack-bundle-analyzer."
     }
+  ],
+  "2033214632395790763": [
+    {
+      "question": "CanActivateChild vs multiple CanActivate ?",
+      "answer": "ChildGuard wins. One parent guard vs N child guards. 67% less code, same protection."
+    },
+    {
+      "question": "Runs on parent → child AND child → child ?",
+      "answer": "Every child navigation. Parent→child1→child2 all trigger child guard."
+    },
+    {
+      "question": "Performance impact ?",
+      "answer": "Negligible (<3ms). Runs only on child route changes."
+    },
+    {
+      "question": "Works with lazy-loaded children ?",
+      "answer": "Perfect—parent guard runs before child module loads."
+    },
+    {
+      "question": "childRoute param—what's available ?",
+      "answer": "childRoute.data, childRoute.params, childRoute.routeConfig.path for granular logic."
+    },
+    {
+      "question": "Combine with CanLoad ?",
+      "answer": "CanLoad (parent) → CanActivateChild (children). Ultimate lazy + secure nested routing."
+    }
   ]
 }
