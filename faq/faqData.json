@@ -608,5 +608,31 @@
       "question": "Does route order matter when using CanMatch ?",
       "answer": "Yes, very much. When you define multiple routes with the same path, the first one that successfully matches is the one Angular uses, so you should place the most specific conditions first."
     }
+  ],
+  "9195629799695113905": [
+    {
+      "question": "Guard execution order ?",
+      "answer": "CanLoad → CanMatch → CanActivate → CanActivateChild → Resolve → CanDeactivate(on leave)."
+    },
+    {
+      "question": "Can I stack multiple guards ?",
+      "answer": "Yes—array order matters. [AuthGuard, RoleGuard, FeatureGuard] executes sequentially."
+    },
+    {
+      "question": "Performance impact ?",
+      "answer": "<5ms total. Cached auth state + take(1) observables = instant."
+    },
+    {
+      "question": "Client-side security safe ?",
+      "answer": "No—server enforcement required. Guards enhance UX, don't replace API auth."
+    },
+    {
+      "question": "Route order with CanMatch ?",
+      "answer": "Most specific first. Premium before regular, feature flag before default."
+    },
+    {
+      "question": "Works with standalone components ?",
+      "answer": "Perfect—Angular 17+ functional guards + standalone = cleanest syntax."
+    }
   ]
 }
