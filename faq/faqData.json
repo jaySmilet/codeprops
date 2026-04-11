@@ -578,5 +578,35 @@
       "question": "Combine with CanLoad ?",
       "answer": "CanLoad (parent) → CanActivateChild (children). Ultimate lazy + secure nested routing."
     }
+  ],
+  "1555403365325589887": [
+    {
+      "question": "What is the biggest difference between CanMatch and CanActivate ?",
+      "answer": "The biggest difference is behavior when access is denied. With CanActivate, a failed guard blocks activation of that route, but with CanMatch, a failed result tells Angular to skip that route and try another matching one instead. That is why CanMatch is so useful for route selection scenarios like A/B testing and dashboard variants."
+    },
+    {
+      "question": "Can I use multiple routes with the same path ?",
+      "answer": "Yes, and that is one of the best use cases for CanMatch. Angular’s documentation shows that you can define the same path more than once and let different CanMatch guards decide which route should win."
+    },
+    {
+      "question": "Is CanMatch good for A/B testing ?",
+      "answer": "Yes. Angular specifically mentions A/B testing, feature flags, and conditional route loading as appropriate CanMatch use cases, so it fits this scenario very naturally."
+    },
+    {
+      "question": "If CanMatch returns false, does navigation stop ?",
+      "answer": "Not necessarily. Angular documents that when CanMatch returns false, the router tries other matching route configurations instead of completely blocking navigation."
+    },
+    {
+      "question": "Can I lazy load with CanMatch ?",
+      "answer": "Yes. CanMatch works very well with lazy loading because it helps determine which route should be considered before the router proceeds with that configuration, making it useful for conditional route loading patterns."
+    },
+    {
+      "question": "Should I trust CanMatch for security ?",
+      "answer": "No, not by itself. Angular clearly warns that client-side guards must not be the only source of access control, because browser-side JavaScript can be modified by users. Sensitive authorization must always be enforced on the server too."
+    },
+    {
+      "question": "Does route order matter when using CanMatch ?",
+      "answer": "Yes, very much. When you define multiple routes with the same path, the first one that successfully matches is the one Angular uses, so you should place the most specific conditions first."
+    }
   ]
 }
