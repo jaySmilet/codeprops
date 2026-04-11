@@ -634,5 +634,31 @@
       "question": "Works with standalone components ?",
       "answer": "Perfect—Angular 17+ functional guards + standalone = cleanest syntax."
     }
+  ],
+  "6668570042696937086": [
+    {
+      "question": "const vs let ?",
+      "answer": "const 92%, let for loops/counters only. Never var."
+    },
+    {
+      "question": "Arrow functions break 'this' ?",
+      "answer": "Lexical 'this' = good for callbacks, bad for object methods. Use regular functions for methods."
+    },
+    {
+      "question": "Bundle size impact ?",
+      "answer": "-50% typical. Tree-shaking + shorter syntax = smaller bundles."
+    },
+    {
+      "question": "Migrate legacy code ?",
+      "answer": "One file at a time. let/const first, then arrows, then async/await."
+    },
+    {
+      "question": "Angular/React differences ?",
+      "answer": "Same ES6+. Angular services lean on classes, React on functional components."
+    },
+    {
+      "question": "TypeScript required ?",
+      "answer": "No—pure ES6+ transforms to ES5. TS adds type safety bonus."
+    }
   ]
 }
