@@ -660,5 +660,61 @@
       "question": "TypeScript required ?",
       "answer": "No—pure ES6+ transforms to ES5. TS adds type safety bonus."
     }
+  ],
+  "6963334213775801296": [
+    {
+      "question": "Replace RxJS entirely ?",
+      "answer": "No—RxJS for async streams, Signals for sync state. They complement perfectly."
+    },
+    {
+      "question": "Performance gains real ?",
+      "answer": "Yes—423 → 18 CD cycles/sec. TTI 2.3s → 847ms. CPU 94% → 23%."
+    },
+    {
+      "question": "effect() vs ngOnChanges ?",
+      "answer": "effect() automatic, ngOnChanges manual. Effects track dependencies dynamically."
+    },
+    {
+      "question": "Bundle size impact ?",
+      "answer": "-50% without Zone.js polyfills. Signals = smaller, native reactivity."
+    },
+    {
+      "question": "Forms with signals ?",
+      "answer": "Signal-backed forms coming Angular 19. Until then: computed() on form.value()."
+    },
+    {
+      "question": "Migration safe ?",
+      "answer": "Incremental—start with counters, move to computed totals, end with zoneless."
+    }
+  ],
+  "6915886770852064114": [
+    {
+      "question": "Do I still need OnPush components ?",
+      "answer": "No. Signals + default change detection = OnPush performance automatically."
+    },
+    {
+      "question": "What about ngOnChanges ?",
+      "answer": "Replaced by computed()/effect() on input() signals. Zero boilerplate."
+    },
+    {
+      "question": "Forms with signals ?",
+      "answer": "computed() on form.value() until signal forms land in Angular 19."
+    },
+    {
+      "question": "Bundle size impact ?",
+      "answer": "Slightly smaller—no Zone.js polyfills needed with zonelessChangeDetection()."
+    },
+    {
+      "question": "Migration safe for existing apps ?",
+      "answer": "100% incremental. Start with one counter signal. Scale to full zoneless."
+    },
+    {
+      "question": "RxJS still needed ?",
+      "answer": "Yes—async streams. Signals handle sync state. Perfect complement."
+    },
+    {
+      "question": "When zoneless ?",
+      "answer": "When 80%+ components use signals. Then provideExperimentalZonelessChangeDetection()."
+    }
   ]
 }
