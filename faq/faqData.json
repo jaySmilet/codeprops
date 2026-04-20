@@ -716,5 +716,35 @@
       "question": "When zoneless ?",
       "answer": "When 80%+ components use signals. Then provideExperimentalZonelessChangeDetection()."
     }
+  ],
+  "770136897783815564": [
+    {
+      "question": "770136897783815564 ?",
+      "answer": "Yes for sync state. Keep RxJS for HTTP/WS. Migrate incrementally."
+    },
+    {
+      "question": "Performance gains real ?",
+      "answer": "287K users: TTI 3.8s → 892ms (-77%). CPU 97% → 24%. Memory stable."
+    },
+    {
+      "question": "LocalStorage sync safe ?",
+      "answer": "Yes—effect() runs only on changes. Use allowSignalWrites: true for forms."
+    },
+    {
+      "question": "Multiple stores OK ?",
+      "answer": "Perfect. CartStore, UserStore, PrefsStore. effect() handles cross-sync."
+    },
+    {
+      "question": "RxJS completely dead ?",
+      "answer": "No—HTTP, WebSockets, timers stay RxJS. Signals = sync state only."
+    },
+    {
+      "question": "Migration order ?",
+      "answer": "1) Local counters → 2) Stores → 3) Forms → 4) Delete Zone.js."
+    },
+    {
+      "question": "Bundle impact ?",
+      "answer": "Signals smaller than BehaviorSubject + takeUntil(destroy$) boilerplate."
+    }
   ]
 }
