@@ -719,7 +719,7 @@
   ],
   "770136897783815564": [
     {
-      "question": "770136897783815564 ?",
+      "question": "Delete ALL BehaviorSubject services ?",
       "answer": "Yes for sync state. Keep RxJS for HTTP/WS. Migrate incrementally."
     },
     {
