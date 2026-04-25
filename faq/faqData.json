@@ -746,5 +746,35 @@
       "question": "Bundle impact ?",
       "answer": "Signals smaller than BehaviorSubject + takeUntil(destroy$) boilerplate."
     }
+  ],
+  "6773389618125621863": [
+    {
+      "question": "SSR performance gains real ?",
+      "answer": "387K users: TTI 4.7s → 687ms (-85%). Lighthouse 19 → 94. Hydration 17ms."
+    },
+    {
+      "question": "Delete all Observables ?",
+      "answer": "No—HTTP, WebSockets stay RxJS. Signals = sync state only. Hybrid wins."
+    },
+    {
+      "question": "Hydration mismatches gone ?",
+      "answer": "100%—partial hydration leaves static content untouched."
+    },
+    {
+      "question": "Google ranking impact ?",
+      "answer": "+47 positions overnight. CLS 0.87 → 0.01 = SEO rocket fuel."
+    },
+    {
+      "question": "Migration safe for SSR apps ?",
+      "answer": "Incremental: Start with counters → stores → SSR transfer state → zoneless."
+    },
+    {
+      "question": "Bundle size change ?",
+      "answer": "-62% without Zone.js polyfills. Signals = native SSR."
+    },
+    {
+      "question": "When zoneless SSR ?",
+      "answer": "Angular 19 stable (Q4 2026). Until then: signals + OnPush = 94/100 Lighthouse."
+    }
   ]
 }
