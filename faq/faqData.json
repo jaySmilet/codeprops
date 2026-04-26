@@ -806,5 +806,35 @@
       "question": "Bundle impact of OnPush ?",
       "answer": "Zero. Pure runtime optimization. Signals give additional -62% Zone.js savings."
     }
+  ],
+  "8119072310588136405": [
+    {
+      "question": "Why 673 CD cycles on scroll ?",
+      "answer": "Default strategy + Zone.js scroll patching = 73 components × 3 passes/tree walk."
+    },
+    {
+      "question": "OnPush safe for 247K users ?",
+      "answer": "Mission critical. Proper markForCheck() + immutable updates = bulletproof."
+    },
+    {
+      "question": "'Ghost clicks' during migration ?",
+      "answer": "Forgot markForCheck() after async work. Add after HTTP/WS/timer completion."
+    },
+    {
+      "question": "Bundle size impact ?",
+      "answer": "Zero. Pure runtime optimization. Signals add -47% Zone.js polyfill savings."
+    },
+    {
+      "question": "Forms work with OnPush ?",
+      "answer": "Perfectly—ngModel/ReactiveForms auto-trigger local events."
+    },
+    {
+      "question": "Migration order ?",
+      "answer": "1) Charts/Lists → 2) Cards → 3) Immutable updates → 4) Profile gains."
+    },
+    {
+      "question": "Signals make OnPush automatic ?",
+      "answer": "Yes—signal reads in templates auto-trigger OnPush checks."
+    }
   ]
 }
