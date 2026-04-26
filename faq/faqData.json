@@ -776,5 +776,35 @@
       "question": "When zoneless SSR ?",
       "answer": "Angular 19 stable (Q4 2026). Until then: signals + OnPush = 94/100 Lighthouse."
     }
+  ],
+  "2562480770417900111": [
+    {
+      "question": "Why 847 CD cycles on scroll ?",
+      "answer": "Zone.js patches scroll events → Default strategy checks all 87 components/tree walk."
+    },
+    {
+      "question": "OnPush safe for production ?",
+      "answer": "Yes—189K users. Use markForCheck() after @Input mutations."
+    },
+    {
+      "question": "Signals eliminate change detection ?",
+      "answer": "No—signals make it granular (4 cycles vs 847). Still need OnPush pattern."
+    },
+    {
+      "question": "Zone.js removal safe ?",
+      "answer": "Angular 19 stable (Q4 2026). Until then: OnPush + signals = 94% zoneless perf."
+    },
+    {
+      "question": "Debug my laggy dashboard ?",
+      "answer": "1) Performance tab → 2) Flame chart → 3) Find Zone.js → 4) OnPush the hot path."
+    },
+    {
+      "question": "'Ghost clicks' fix ?",
+      "answer": "CD blocking main thread. OnPush + detectChanges() in requestAnimationFrame."
+    },
+    {
+      "question": "Bundle impact of OnPush ?",
+      "answer": "Zero. Pure runtime optimization. Signals give additional -62% Zone.js savings."
+    }
   ]
 }
